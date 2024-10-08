@@ -261,8 +261,6 @@ const handlePlantsClick = (e) => {
   };
 
 
-const [totalQuantity, setTotalQuantity] = useState(calculateTotalQuantity());
-//useEffect(() => {setTotalQuantity(calculateTotalQuantity())}, [CartItem]);
     return (
         <div>
              <div className="navbar" style={styleObj}>
