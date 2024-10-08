@@ -239,11 +239,11 @@ function ProductList() {
     textDecoration: 'none',
    }
 
-   const handleAddToCart = (product) => {
-    dispatch(addItem(product));
+   const handleAddToCart = (plant) => {
+    dispatch(addItem(plant));
     setAddedToCart((prevState) => ({
        ...prevState,
-       [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
+       [plant.name]: true, // Set the product name as key and value as true to indicate it's added to cart
      }));
   };
 
@@ -261,7 +261,6 @@ const handlePlantsClick = (e) => {
     e.preventDefault();
     setShowCart(false);
   };
-
 
   //Add a function to calculate the total quantity of items in the cart:
 
@@ -320,7 +319,12 @@ const handlePlantsClick = (e) => {
                 <p className="product-description">{plant.description}</p>
                 <div className="product-price">{plant.cost}</div>
                 {/*Similarly like the above plant.name show other details like description and cost*/}
-                <button  className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
+                <button className={`product-button ${addedToCart[plant.name] ? 'added-to-cart' : ''}`}
+                                    onClick={() => handleAddToCart(plant)}
+                                    disabled={addedToCart[plant.name]}
+                                >
+                                    {addedToCart[plant.name] ? "Added to Cart" : "Add to Cart"}
+                                </button>
 
 
 
