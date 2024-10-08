@@ -262,11 +262,6 @@ const handlePlantsClick = (e) => {
     setShowCart(false);
   };
 
-  const handleParadiseNurseyClick = (e) => {
-    e.preventDefault(); // Prevent the default anchor click behavior
-    setShowPlants(false); // Hide the Plants section
-    setShowCart(false);   // Optionally hide the Cart section if needed
-};
 
   //Add a function to calculate the total quantity of items in the cart:
 
@@ -286,7 +281,7 @@ const handlePlantsClick = (e) => {
             <div className="tag">
                <div className="luxury">
                <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
-               <a href="/e-plantShopping"  style={{textDecoration:'none'}}>
+               <a href="https://jafarharun.github.io/e-plantShopping/"  style={{textDecoration:'none'}}>
                         <div>
                     <h3 style={{color:'white'}}>Paradise Nursery</h3>
                     <i style={{color:'white'}}>Where Green Meets Serenity</i>
