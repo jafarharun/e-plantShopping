@@ -260,9 +260,6 @@ const handlePlantsClick = (e) => {
     setShowCart(false);
   };
 
-  const calculateTotalQuantity = () => {
-    return CartItem ? CartItem.reduce((total, item) => total + item.quantity, 0) : 0;
-};
 
 const [totalQuantity, setTotalQuantity] = useState(calculateTotalQuantity());
 //useEffect(() => {setTotalQuantity(calculateTotalQuantity())}, [CartItem]);
@@ -292,7 +289,7 @@ const [totalQuantity, setTotalQuantity] = useState(calculateTotalQuantity());
                      <circle cx="184" cy="216" r="12"></circle>
                      <path d="M42.3,72H221.7l-26.4,92.4A15.9,15.9,0,0,1,179.9,176H84.1a15.9,15.9,0,0,1-15.4-11.6L32.5,37.8A8,8,0,0,0,24.8,32H8" fill="none" stroke="#faf9f9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" id="mainIconPathAttribute"></path>
                  </svg>
-                 <div className='cart_quantity_count'>{totalQuantity}</div>
+                 <div className='cart_quantity_count'>0</div>
              </h1>
          </a>
      </div>
