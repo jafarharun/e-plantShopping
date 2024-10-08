@@ -10,6 +10,13 @@ function ProductList() {
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
     const [addedToCart, setAddedToCart] = useState({});
+    const handleAddToCart = (product) => {
+        dispatch(addItem(product));
+        setAddedToCart((prevState) => ({
+           ...prevState,
+           [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
+         }));
+      };
     const plantsArray = [
         {
             category: "Air Purifying Plants",
@@ -238,13 +245,7 @@ function ProductList() {
     textDecoration: 'none',
    }
 
-   const handleAddToCart = (product) => {
-    dispatch(addItem(product));
-    setAddedToCart((prevState) => ({
-       ...prevState,
-       [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
-     }));
-  };
+   
 
    const handleCartClick = (e) => {
     e.preventDefault();
@@ -320,10 +321,9 @@ const handlePlantsClick = (e) => {
                 {/*Similarly like the above plant.name show other details like description and cost*/}
     <button 
   className={`product-button ${addedToCart[product.name] ? 'added-to-cart' : ''}`} 
-  onClick={() => handleAddToCart(product)} 
+  onClick={() => handleAddToCart(plant)} 
   disabled={addedToCart[product.name]} // Disable the button if the product is added to cart
->
-  {addedToCart[product.name] ? 'Added to Cart' : 'Add to Cart'}
+>{addedToCart[product.name] ? 'Added to Cart' : 'Add to Cart'}
 </button>
 
 
