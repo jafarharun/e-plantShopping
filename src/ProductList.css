@@ -253,3 +253,7 @@ body {
         text-align: center; /* Align text to the center */
       }
   }
+  .product-button.added-to-cart {
+    background-color: grey; 
+    cursor: not-allowed; 
+  }
